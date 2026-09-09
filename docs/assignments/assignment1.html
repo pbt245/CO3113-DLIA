@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assignment 1 - Group [GROUP_ID] · CO3133</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Group [GROUP_ID] · CO3133</a>
+    <div class="links">
+      <a href="index.html">Overview</a>
+      <a href="assignment1.html" aria-current="page">Assignment 1</a>
+      <a href="assignment2.html">Assignment 2</a>
+      <a href="assignment3.html">Assignment 3</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <section>
+    <p class="eyebrow">Assignment 1 · Milestone M1 (Draft) → M2 (Final)</p>
+    <h1>Foundations of Deep Learning Pipelines and Architectures</h1>
+    <p class="lede">
+      End-to-end image classification pipeline; five model families compared
+      under one shared evaluation protocol on Fashion-MNIST.
+    </p>
+    <table class="meta-table">
+      <tr><th>Instructor</th><td>Lê Thành Sách</td></tr>
+      <tr><th>Group members</th><td>Phan Bá Thanh, Trần Công Hoàng Phước - see <a href="index.html">overview</a> for roles</td></tr>
+      <tr><th>Status</th><td><span class="tag tag-todo">not started</span></td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Problem statement</h2>
+    <div class="todo">
+      <strong>TODO -</strong> formulate the classification problem (input, output,
+      loss) and state why a controlled, same-split comparison across five
+      architecture families is the point of this assignment.
+    </div>
+  </section>
+
+  <section>
+    <h2>Dataset &amp; EDA</h2>
+    <p>
+      <span class="tag tag-optional">optional</span> MNIST - development/debugging only.
+      <span class="tag tag-mandatory">mandatory</span> Fashion-MNIST - primary comparison dataset.
+    </p>
+    <div class="todo">
+      <strong>TODO -</strong> report split sizes (train/val/test), seed,
+      stratification policy, class distribution, input size, imbalance
+      analysis, and representative visual samples. All five models must
+      share the exact same split.
+    </div>
+  </section>
+
+  <section>
+    <h2>Methodology</h2>
+    <h3>Pipeline overview</h3>
+    <div class="todo">
+      <strong>TODO -</strong> diagram: raw data → preprocessing → loader →
+      model → loss → optimization → evaluation.
+    </div>
+    <h3>Mandatory models</h3>
+    <ul class="checklist">
+      <li>Linear / softmax classifier (flattened input, cross-entropy on raw logits)</li>
+      <li>Multilayer Perceptron (≥1 hidden layer; document activations &amp; regularization)</li>
+      <li>Convolutional Neural Network (custom architecture; document conv/pool/feature maps)</li>
+      <li>LSTM or GRU (image as row/column/patch sequence; document timestep &amp; hidden state)</li>
+      <li>Transformer (token projection, positional encoding; document attention I/O)</li>
+    </ul>
+    <p><em>No pretrained backbones for the five core models.</em></p>
+    <h3>Optional extensions</h3>
+    <div class="todo">
+      <strong>TODO -</strong> note which optional extensions (LSTM vs GRU, SSM/Mamba,
+      CIFAR-10, robustness/interpretability, PyTorch vs Keras, matched-budget
+      comparison) are attempted, if any.
+    </div>
+  </section>
+
+  <section>
+    <h2>Results, comparison &amp; discussion</h2>
+    <div class="todo">
+      <strong>TODO -</strong> accuracy &amp; macro-F1, parameter counts,
+      train/inference time, training &amp; validation curves, confusion
+      matrices, and an analysis of inductive bias across pixel / spatial /
+      sequence representations. Report hardware, software versions, seeds,
+      and checkpoint-selection rule.
+    </div>
+  </section>
+
+  <section>
+    <h2>Error analysis, limitations &amp; conclusion</h2>
+    <div class="todo">
+      <strong>TODO -</strong> correct/incorrect examples per model, a failure-case
+      taxonomy with hypothesized causes, and overall limitations.
+    </div>
+  </section>
+
+  <section>
+    <h2>Resources</h2>
+    <ul class="resource-links">
+      <li class="pending"><a href="#">Source code</a></li>
+      <li class="pending"><a href="#">Checkpoints</a></li>
+      <li class="pending"><a href="#">Report</a></li>
+      <li class="pending"><a href="#">Slides</a></li>
+      <li class="pending"><a href="#">YouTube video</a></li>
+    </ul>
+    <p style="color:var(--muted); font-size:14px;">
+      Video title format: <code>CO3133-Semester-261 Group [GROUP_ID] Assignment 1</code>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    CO3133 - Semester 261 - Group [GROUP_ID]
+  </div>
+</footer>
+
+</body>
+</html>

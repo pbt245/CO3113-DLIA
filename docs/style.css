@@ -1,0 +1,306 @@
+/* ---------------------------------------------------------
+   CO3133 course project pages - shared styles
+   Palette: paper #FAFAF8, ink #1A1D23, line #DCDCD6,
+            accent #2B4C7E, muted #6B6F76
+   Type: system sans throughout, ui-monospace for technical
+         labels (codes, seeds, commit tags, metrics).
+--------------------------------------------------------- */
+
+:root {
+  --paper: #FAFAF8;
+  --ink: #1A1D23;
+  --muted: #6B6F76;
+  --line: #DCDCD6;
+  --accent: #2B4C7E;
+  --accent-soft: #EDF1F7;
+  --tag-mandatory: #A6412E;
+  --tag-mandatory-soft: #F7ECEA;
+  --tag-optional: #4B7B5B;
+  --tag-optional-soft: #EEF4EF;
+  --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --max: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- top nav ---------- */
+
+.site-nav {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+.site-nav .wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.site-nav .brand {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+.site-nav .links {
+  display: flex;
+  gap: 18px;
+  font-size: 15px;
+}
+.site-nav .links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.site-nav .links a:hover,
+.site-nav .links a[aria-current="page"] {
+  color: var(--ink);
+}
+
+/* ---------- layout ---------- */
+
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  margin-top: 64px;
+}
+footer .wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---------- headings & hero ---------- */
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: 21px;
+  margin: 0 0 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+h3 {
+  font-size: 17px;
+  margin: 24px 0 8px;
+}
+
+p { margin: 0 0 14px; }
+
+.lede {
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 62ch;
+}
+
+/* ---------- section rhythm ---------- */
+
+section {
+  margin: 40px 0 48px;
+}
+
+/* ---------- meta table (group / course info) ---------- */
+
+.meta-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin: 18px 0;
+}
+.meta-table th,
+.meta-table td {
+  text-align: left;
+  padding: 9px 12px 9px 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.meta-table th {
+  color: var(--muted);
+  font-weight: 500;
+  width: 200px;
+}
+
+/* ---------- assignment index list (landing page) ---------- */
+
+.assignment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.assignment-list li {
+  border-bottom: 1px solid var(--line);
+}
+.assignment-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 18px 4px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.assignment-list a:hover .title { text-decoration: underline; }
+.assignment-list .title {
+  font-weight: 600;
+  font-size: 17px;
+}
+.assignment-list .status {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ---------- tags (mandatory / optional / todo) ---------- */
+
+.tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  line-height: 1.5;
+}
+.tag-mandatory { background: var(--tag-mandatory-soft); color: var(--tag-mandatory); }
+.tag-optional  { background: var(--tag-optional-soft);  color: var(--tag-optional); }
+.tag-todo      { background: var(--accent-soft); color: var(--accent); }
+
+/* ---------- resource links row ---------- */
+
+.resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 0;
+  list-style: none;
+}
+.resource-links li {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.resource-links a {
+  display: block;
+  padding: 8px 14px;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.resource-links a:hover { border-color: var(--accent); color: var(--accent); }
+.resource-links li.pending { opacity: 0.5; }
+.resource-links li.pending a { pointer-events: none; }
+
+/* ---------- placeholder / TODO blocks ---------- */
+
+.todo {
+  border: 1px dashed var(--line);
+  border-radius: 4px;
+  padding: 14px 16px;
+  color: var(--muted);
+  font-size: 15px;
+  background: #fff;
+}
+.todo strong { color: var(--ink); }
+
+/* ---------- checklist ---------- */
+
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.checklist li {
+  padding: 6px 0 6px 26px;
+  position: relative;
+  font-size: 15px;
+}
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--muted);
+  border-radius: 2px;
+}
+
+/* ---------- roles table ---------- */
+
+.roles-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin: 18px 0;
+}
+.roles-table th, .roles-table td {
+  text-align: left;
+  padding: 9px 12px 9px 0;
+  border-bottom: 1px solid var(--line);
+}
+.roles-table th {
+  font-weight: 500;
+  color: var(--muted);
+  font-size: 13px;
+  font-family: var(--mono);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 560px) {
+  h1 { font-size: 27px; }
+  .site-nav .wrap { padding: 16px 18px; }
+  main { padding: 32px 18px 72px; }
+  .meta-table th { width: 130px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}
